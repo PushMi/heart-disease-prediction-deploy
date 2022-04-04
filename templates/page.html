@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>
+            Heart Failure Prediction Model ^_^
+        </title>
+        <style>
+            .center {
+                margin: auto;
+                width: 50%;
+                border: 3px solid green;
+                padding: 10px;
+}
+        </style>
+    </head>
+
+    <body>
+        <div class="center">
+        <h3> Enter few details of yours to get the prediction of heart disease :</h3>
+        <br><br>
+        
+        <form action="/prediction" method="post">
+            Age : <input name = "age" type = "number" placeholder = "Enter your age please.">
+            <br><br>
+            Gender : 
+            <input name = "gender" type = "radio" value = 1> Male
+            <input name = "gender" type = "radio" value = 0> Female
+            <br><br>
+            Chest Pain Type : 
+            <br>
+            <input type = "radio" name = "paintype" value = 1> ATA
+            <br>
+            <input type = "radio" name = "paintype" value = 2> NAP
+            <br>
+            <input type = "radio" name = "paintype" value = 0> ASY
+            <br>
+            <input type = "radio" name = "paintype" value = 3> TA
+
+            <br><br>
+            Resting BP : <input name = "restingbp" type = "number" placeholder = "your resting BP?">
+            <br><br>
+            Cholesterol : <input name = "cholesterol" type = "number" placeholder = "Enter your cholesterol">
+            <br><br>
+            Fasting BS : <input name = "fastingbs" type = "number" placeholder = "Enter 0 (no) or 1 (yes) ">
+            <br><br>
+            Resting ECG : 
+            <input name = "restingecg" type = "radio" value = 2>ST
+            <input name = "restingecg" type = "radio" value = 1>Normal
+            <input name = "restingecg" type = "radio" value = 3>LVH
+            <br><br>
+            MaxHr : <input name = "maxhr" type = "number" placeholder = "Enter Maximum hours">
+            <br><br>
+            Exercise Angina : 
+            <input name = "exercise" type = "radio" value = 0> No
+            <input name = "exercise" type = "radio" value = 1> Yes
+            <br><br>
+            Oldpeak : <input name = "oldpeak" type = "number" step = "any" placeholder = "Enter the decimal number.">
+            <br><br>
+            ST Slope :
+            <input name = "stslope" type = "radio" value = 2>Up
+            <input name = "stslope" type = "radio" value = 0>Down
+            <input name = "stslope" type = "radio" value = 1>Flat
+            
+            <br><br>
+
+            <input type = "submit">
+        </form>
+    
+        <b>Prediction: </b> {{output_prediction}}
+        <br>
+        <b>Probability: </b> {{output_proba}} 
+        </div>
+    </body>
+</html>
